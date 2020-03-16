@@ -1,7 +1,11 @@
 import unittest
-import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from DAVE import SAME
+from X_PATH import SIMA
 
 class Search(unittest.TestCase):
         def setUp(self):
@@ -14,30 +18,20 @@ class Search(unittest.TestCase):
             element = self.driver.find_element_by_name("q")
             element.send_keys('selenide')
             element.send_keys(Keys.RETURN)
-            time.sleep(2)
-            titles = self.driver.find_element_by_tag_name('h3')
-            titles.click()
+            SAME.Fact(self)
             assert 'https://ru.selenide.org/' in self.driver.current_url
             Url = driver.current_url
             driver.back()
-            time.sleep(2)
             assert 'Google' in self.driver.title
-            yet = self.driver.find_element_by_class_name('hdtb-dd-b')
-            yet.click()
-            time.sleep(2)
-            images = self.driver.find_element_by_class_name('f9UGee')
-            images.click()
-            time.sleep(2)
-            picture = self.driver.find_element_by_xpath('//*[@id="islrg"]/div/div/a/div/img')
-            picture.click()
-            time.sleep(2)
+            a = '//*[@id="hdtb-msb-vis"]/div[4]/a'
+            SIMA.Trask(self,a)
+            a = '//*[@id="islrg"]/div/div/a/div/img'
+            SIMA.Trask(self, a)
             picture = self.driver.find_element_by_class_name('pM4Snf')
             assert 'ru.selenide.org' in picture.text
             All = self.driver.find_element_by_class_name('NZmxZe')
             All.click()
-            time.sleep(2)
-            titles_2 = self.driver.find_element_by_tag_name('h3')
-            titles_2.click()
+            SAME.Fact(self)
             assert Url in driver.current_url
 
 
