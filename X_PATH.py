@@ -7,6 +7,6 @@ class SIMA:
         return self
 
     def Trask(self,a):
-        titles = WebDriverWait(self.driver, 100000).until(
+        titles = WebDriverWait(self.driver, 10).until(
            EC.presence_of_element_located((By.XPATH, a)))
         titles.click()

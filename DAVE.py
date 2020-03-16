@@ -7,6 +7,6 @@ class SAME:
         return self
 
     def Fact(self):
-        titles = WebDriverWait(self.driver, 100000).until(
+        titles = WebDriverWait(self.driver, 10).until(
            EC.presence_of_element_located((By.TAG_NAME, 'h3')))
         titles.click()
