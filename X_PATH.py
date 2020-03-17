@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class SIMA:
     def __init__(self):
-        return self
+        pass
 
     def Trask(self,a):
         titles = WebDriverWait(self.driver, 10).until(

@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class SAME:
     def __init__(self):
-        return self
+        pass
 
     def Fact(self):
         titles = WebDriverWait(self.driver, 10).until(
